@@ -1,0 +1,61 @@
+fun main() {
+    var AddOperation = AddOperation()
+    var SubstractOperation = SubstractOperation()
+    var MultiplyOperation = MultiplyOperation()
+    var DivideOperation = DivideOperation()
+
+    println("계산할 숫자와 기호를 엔터를 눌러 따로 작성해주세요")
+    var num1 = readLine()!!.toInt()
+    var operate = readLine()!!
+    var num2 = readLine()!!.toInt()
+
+    when(operate){
+        "+" -> {AddOperation.calculate(num1, num2)}
+        "-" -> {SubstractOperation.calculate(num1, num2)}
+        "*" -> {MultiplyOperation.calculate(num1, num2)}
+        "/" -> {DivideOperation.calculate(num1, num2)}
+    }
+}
+
+
+
+open class calculater() {
+    open fun calculate(num1 : Int, num2 : Int){
+    }
+}
+
+
+
+
+class AddOperation : calculater(){
+    override fun calculate(num1 : Int, num2 : Int){
+        println(num1 + num2)
+    }
+}
+
+
+
+
+class SubstractOperation : calculater(){
+    override fun calculate(num1 : Int, num2 : Int){
+        println(num1 - num2)
+    }
+}
+
+
+
+
+class  MultiplyOperation : calculater(){
+    override fun calculate(num1 : Int, num2 : Int){
+        println(num1 * num2)
+    }
+}
+
+
+
+
+class DivideOperation: calculater(){
+    override fun calculate(num1 : Int, num2 : Int){
+        println(num1 / num2)
+    }
+}

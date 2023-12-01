@@ -1,0 +1,25 @@
+class Calculater {
+    var operate: String = ""
+
+    fun calculate() {
+        var num1: Int = readLine()!!.toInt()
+        while (operate != "=") {
+            operate = readLine()!!.toString()
+            if (operate == "=") {
+                println(num1)
+                break
+            }
+            var num2: Int = readLine()!!.toInt()
+            when (operate) {
+                "+" -> { num1 += num2 }
+                "-" -> { num1 -= num2 }
+                "*" -> { num1 *= num2 }
+                "/" -> { num1 /= num2 }
+            }
+        }
+    }
+}
+
+fun main() {
+    Calculater().calculate()
+}
